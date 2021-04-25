@@ -1,6 +1,6 @@
 const https = require('https');
 
-myFunc = async (req,res) => {
+module.exports = async (req,res) => {
   try {
     let makes = await getAirtableData("Make");
     let types = await getAirtableData("Type");
@@ -39,8 +39,8 @@ myFunc = async (req,res) => {
 
     await addRowsDuda(JSON.stringify(typesObj4Duda), '621ddc81', 'Typelist');
 
-    // res.writeHead(200);
-    // res.end();
+    res.writeHead(200);
+    res.end();
   } catch (err) {
     console.log(err);
     res.writeHead(500);
@@ -258,5 +258,3 @@ async function getCollectionInfo(siteName, collectionName) {
   })
   return resultObject;
 }
-
-myFunc();
