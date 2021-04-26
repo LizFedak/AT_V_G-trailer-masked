@@ -1,0 +1,343 @@
+
+
+/* TEMPLATE STYLE i.e. LEFT = SEARCH + RIGHT = TRAILER LIST */
+#mobile-trailers {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  max-width: 480px;
+  
+}
+
+* {
+  font-family: 'Amiko', sans-serif;
+  /*text-align: left;*/
+}
+
+
+/* SEARCH STYLES */
+
+#mobile-trailerSearch {
+  border:solid 1px #ccc;
+  border-radius: 5px;
+  padding:12px 14px;
+  margin-bottom:10px;
+}
+
+#mobile-trailerSearch:focus {
+  outline:none;
+  border-color:#aaa;
+}
+
+/* SEARCH AND FILTER BOX */
+
+.mobile-refineBox {
+  /*background-color: #FAFAFA;*/
+  width: 100%;
+  min-width: 200px;
+  padding: 20px 0;
+  /*border-radius: 20px;*/
+  /*box-shadow: 0 1px 2px rgba(0,0,0,0.1), 0 1px 2px rgba(0,0,0,0.1);*/
+  text-align: left !important;
+}
+
+.mobile-filtersTitle {
+  font-family: 'Amiko', sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  padding: 15px 5px;
+}
+
+.mobile-categories {
+  margin: 20px 0;
+}
+
+.mobile-categories-title {
+  margin: 10px 0;
+}
+
+
+
+
+/* TRAILER ITEM LIST STYLES */
+
+li {
+  list-style: none;
+  margin-bottom: 15px;
+}
+
+.mobile-card-list {
+  width: 100%;
+}
+
+.mobile-trailer-card {
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.1), 0 1px 2px rgba(0,0,0,0.1);
+
+}
+
+.mobile-trailer-left {
+  max-width: 100%;
+}
+
+.mobile-trailer-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.mobile-trailer-right {
+  width: 100%;
+}
+
+.mobile-trailer-right-secondrow {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+/* CARD DETAIL STYLES */
+.mobile-trailer-name {
+  font-weight: 600;
+  font-size: 20px;
+  color: #006A30;
+  text-align: center;
+  font-family: 'Amiko', sans-serif;
+}
+
+
+.mobile-trailer-price {
+  color: #000;
+  font-size: 24px;
+  font-weight: 600;
+  /*top: 0;*/
+  margin:0;
+  margin-bottom: 5px;
+}
+
+
+
+.mobile-trailer-right-thirdRow {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+
+#mobile-trailerSearch {
+    width: 100%;
+    padding: 10px;
+}
+
+
+#mobile-pagination {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 3px;
+    margin: 0;
+}
+
+
+#mobile-clearAllTrailerFilters {
+   
+    color: #cf1e15;
+    cursor: pointer;
+}
+
+
+#mobile-priceFilter {
+    margin-top: 10px;
+}
+
+#mobile-priceFilter:focus {
+    outline: none;
+}
+
+
+/*.viewSpecs {*/
+/*  padding: .6rem 1rem;*/
+/*  margin: 0 10px 10px 0;*/
+/*  min-width: 125px;*/
+/*  background-color: #fff;*/
+/*  color: #006A30;*/
+  /*border-radius: 3px;*/
+/*  border: 1px solid #006A30;*/
+/*  user-select: none;*/
+/*  display: inline-block;*/
+/*    font-weight: 400;*/
+/*    text-align: center;*/
+/*    white-space: nowrap;*/
+/*    vertical-align: middle;*/
+/*    outline: none;*/
+/*}*/
+
+/*.viewSpecs:hover {*/
+/*    background-color: #006A30;*/
+/*    color: #fff;*/
+/*    outline: none;*/
+/*}*/
+
+
+.mobile-viewSpecs {
+  padding: .6rem 1rem;
+  margin: 0 10px 10px 0;
+  /*min-width: 125px;*/
+  width: 150px;
+  background-color: #fff;
+  color: #006A30 !important;
+  /*border-radius: 3px;*/
+  border: 1px solid #006A30;
+  user-select: none;
+  display: inline-block;
+    font-weight: 400;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    text-decoration: none;
+}
+
+
+.mobile-viewSpecs:hover {
+    background-color: #006A30;
+    color: #fff !important;
+}
+
+
+
+.mobilecondition {
+    align-items: left;
+}
+
+.mobile-mobile-list-expand {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 5px;
+}
+
+
+.mobileSort {
+  padding: .6rem 1rem;
+  margin: 0 10px 10px 0;
+  min-width: 125px;
+  background-color: #fff;
+  color: #006A30;
+  /*border-radius: 3px;*/
+  border: 1px solid #006A30;
+  user-select: none;
+  display: inline-block;
+    font-weight: 400;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    outline: none;
+}
+
+.mobileSort:hover {
+    background-color: #006A30;
+    color: #fff;
+    outline: none;
+}
+
+@keyframes hover-color {
+  from {
+    border-color: #c0c0c0; }
+  to {
+    border-color: #006A30; } }
+
+.magic-checkbox {
+  position: absolute;
+  display: none; }
+
+.magic-checkbox[disabled] {
+  cursor: not-allowed; }
+
+.magic-checkbox + label {
+  position: relative;
+  display: block;
+  padding-left: 30px;
+  cursor: pointer;
+  vertical-align: middle;
+}
+
+  .magic-checkbox + label:hover:before {
+    animation-duration: 0.4s;
+    animation-fill-mode: both;
+    animation-name: hover-color; }
+
+  .magic-checkbox + label:before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    content: '';
+    border: 1px solid #c0c0c0; }
+
+  .magic-checkbox + label:after {
+    position: absolute;
+    display: none;
+    content: ''; }
+
+
+.magic-checkbox[disabled] + label {
+  cursor: not-allowed;
+  color: #e4e4e4; }
+
+  .magic-checkbox[disabled] + label:hover,
+  .magic-checkbox[disabled] + label:before,
+  .magic-checkbox[disabled] + label:after {
+    cursor: not-allowed; }
+
+  .magic-checkbox[disabled] + label:hover:before {
+    border: 1px solid #e4e4e4;
+    animation-name: none; }
+  
+  .magic-checkbox[disabled] + label:before {
+    border-color: #e4e4e4; }
+
+
+.magic-checkbox:checked + label:before {
+  animation-name: none; }
+
+
+.magic-checkbox:checked + label:after {
+  display: block; }
+
+.magic-checkbox + label:before {
+  border-radius: 3px; }
+
+.magic-checkbox + label:after {
+  top: 2px;
+  left: 7px;
+  box-sizing: border-box;
+  width: 6px;
+  height: 12px;
+  transform: rotate(45deg);
+  border-width: 2px;
+  border-style: solid;
+  border-color: #fff;
+  border-top: 0;
+  border-left: 0; }
+
+.magic-checkbox:checked + label:before {
+  border: #006A30;
+  background: #006A30; }
+
+.magic-checkbox:checked[disabled] + label:before {
+  border: #c9e2f9;
+  background: #c9e2f9; }
+  
+
+#mobile-filterToggleLink {
+    text-align: right;
+}
+
+#mobile-toggle-trailer-filters > div,
+#mobile-toggle-trailer-filters > div > div {
+    margin: 10px 0;
+}

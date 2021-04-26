@@ -9,14 +9,14 @@ module.exports = async (req,res) => {
     let typesSet = await getSet(types, "Type");
     
     // DELETE EXISTING TYPE IF NOT IN THE AIRTABLE ANYMORE
-    let typeObject = await getCollectionInfo('621ddc81','Typelist');
-    let filteredTypesToDelete = await createReqObjDeleteRowsTYPE(typeObject, 'Typelist', typesSet);
-    await deleteRows(JSON.stringify(filteredTypesToDelete), '621ddc81','Typelist');
+    let typeObject = await getCollectionInfo('a8c6c850','Types');
+    let filteredTypesToDelete = await createReqObjDeleteRowsTYPE(typeObject, 'Types', typesSet);
+    await deleteRows(JSON.stringify(filteredTypesToDelete), 'a8c6c850','Types');
 
     // DELETE EXISTING MAKE IF NOT IN THE AIRTABLE ANYMORE
-    let makeObject = await getCollectionInfo('621ddc81','Makes');
+    let makeObject = await getCollectionInfo('a8c6c850','Makes');
     let filteredMakesToDelete = await createReqObjDeleteRowsMAKE(makeObject, 'Makes', makesSet);
-    await deleteRows(JSON.stringify(filteredMakesToDelete), '621ddc81','Makes');
+    await deleteRows(JSON.stringify(filteredMakesToDelete), 'a8c6c850','Makes');
 
     // SEND any NEW makes or types that are NOT IN THE TABLE ALREADY
 
@@ -28,7 +28,7 @@ module.exports = async (req,res) => {
     // make the object to send to duda
     let makesObj4Duda = await makeAddRowObjectMAKE(makesToSendToDuda);
     // send them to Duda
-    await addRowsDuda(JSON.stringify(makesObj4Duda), '621ddc81', 'Makes')
+    await addRowsDuda(JSON.stringify(makesObj4Duda), 'a8c6c850', 'Makes')
 
     //////////////////////// TYPES
     // get the types that need to be updated on Duda
@@ -37,7 +37,7 @@ module.exports = async (req,res) => {
     // make the object to send to Duda
     let typesObj4Duda = await makeAddRowObjectTYPE(typesToSendToDuda);
 
-    await addRowsDuda(JSON.stringify(typesObj4Duda), '621ddc81', 'Typelist');
+    await addRowsDuda(JSON.stringify(typesObj4Duda), 'a8c6c850', 'Types');
 
     res.writeHead(200);
     res.end();
@@ -199,8 +199,8 @@ async function getSet(obj, field) {
 }
 
 async function getAirtableData(field) {
-  let path = `https://api.airtable.com/v0/appBdRkKDKoN7ufAS/Table%201?view=Grid%20view&fields%5B%5D=${encodeURIComponent(field)}`;
-  // let path = "https://api.airtable.com/v0/appBdRkKDKoN7ufAS/Table%201?maxRecords=3&view=Grid%20view";
+  let path = `https://api.airtable.com/v0/appBdRkKDKoN7ufAS/Table%201?view=Inventory&fields%5B%5D=${encodeURIComponent(field)}`;
+
   let authorization = process.env.AT_API;
   const options = {
     hostname: 'api.airtable.com',
