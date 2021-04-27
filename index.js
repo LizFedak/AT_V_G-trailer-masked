@@ -198,8 +198,9 @@ async function getSet(obj, field) {
   return new Set(JSON.parse(obj).records.map(item => item.fields[field]));
 }
 
+
 async function getAirtableData(field) {
-  let path = `https://api.airtable.com/v0/appBdRkKDKoN7ufAS/Table%201?view=Inventory&fields%5B%5D=${encodeURIComponent(field)}`;
+  let path = `https://api.airtable.com/v0/appBdRkKDKoN7ufAS/Inventory?view=Grid%20view&fields%5B%5D=${encodeURIComponent(field)}`;
 
   let authorization = process.env.AT_API;
   const options = {
